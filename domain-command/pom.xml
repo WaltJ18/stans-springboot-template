@@ -9,8 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>redis</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>domain-command</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -19,21 +18,16 @@
     </properties>
 
     <dependencies>
+        <!-- Lombok (already version-managed in parent) -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
 
+        <!-- Jackson annotations if needed -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>stan.template</groupId>
-            <artifactId>domain-command</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <artifactId>jackson-annotations</artifactId>
         </dependency>
     </dependencies>
-
 </project>
