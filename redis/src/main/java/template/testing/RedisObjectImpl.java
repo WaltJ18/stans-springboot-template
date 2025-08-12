@@ -1,4 +1,4 @@
-package testing;
+package template.testing;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;

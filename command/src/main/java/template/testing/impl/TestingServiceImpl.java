@@ -1,13 +1,13 @@
-package testing.impl;
+package template.testing.impl;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import testing.RedisObject;
-import testing.TestingEntity;
-import testing.TestingEntityRepository;
-import testing.TestingService;
+import template.testing.RedisObject;
+import template.testing.TestingEntity;
+import template.testing.TestingEntityRepository;
+import template.testing.TestingService;
 
 @Service
 public class TestingServiceImpl implements TestingService {
