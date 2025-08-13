@@ -16,6 +16,7 @@
         <module>client</module>
         <module>command</module>
         <module>web</module>
+        <module>domain-client</module>
     </modules>
     <groupId>stan.template</groupId>
     <name>Stan Spring Boot Data Template</name>
