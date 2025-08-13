@@ -14,14 +14,12 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
 public class TestingEntity implements Serializable {
 
     @Serial
     private static final long serialVersionUID = -7906722929500777147L;
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

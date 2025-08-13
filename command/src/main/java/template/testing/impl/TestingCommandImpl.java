@@ -4,13 +4,15 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import template.AbstractCommand;
 import template.testing.RedisObject;
 import template.testing.TestingEntity;
 import template.testing.TestingEntityRepository;
-import template.testing.TestingService;
+import template.testing.TestingCommand;
 
 @Service
-public class TestingServiceImpl implements TestingService {
+public class TestingCommandImpl extends AbstractCommand<JsonNode, String>
+        implements TestingCommand {
 
     @Autowired
     private RedisObject redisObject;
@@ -20,8 +22,7 @@ public class TestingServiceImpl implements TestingService {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    @Override
-    public String saveTesting(JsonNode jsonNode){
+    public String doExecute(JsonNode jsonNode){
         long count = repository.count();
         if(count == 0l ){
             count = 1l;
