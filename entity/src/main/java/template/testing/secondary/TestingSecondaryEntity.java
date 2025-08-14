@@ -1,4 +1,4 @@
-package template.testing;
+package template.testing.secondary;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
@@ -9,6 +9,7 @@ import lombok.*;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -16,18 +17,22 @@ import java.io.Serializable;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class TestingEntity implements Serializable {
+public class TestingSecondaryEntity implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = -7906722929500777147L;
+    private static final long serialVersionUID = -1350893978036911130L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private LocalDateTime timestamp;
 
     @JsonProperty("text_test")
     private String textTest;
 
     @JsonProperty("status_test")
     private boolean statusTest;
+
+
 }
