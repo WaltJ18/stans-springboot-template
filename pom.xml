@@ -9,6 +9,7 @@
     </parent>
     <artifactId>stan-springboot-template</artifactId>
     <modules>
+        <module>entity</module>
         <module>exception</module>
         <module>domain-web</module>
         <module>domain-command</module>
@@ -18,7 +19,6 @@
         <module>client</module>
         <module>command</module>
         <module>web</module>
-        <module>entity</module>
     </modules>
     <groupId>stan.template</groupId>
     <name>Stan Spring Boot Data Template</name>
@@ -29,6 +29,7 @@
         <java.version>21</java.version>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
+        <spring.boot.version>3.5.4</spring.boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <main.basedir>${basedir}/../..</main.basedir>
     </properties>
