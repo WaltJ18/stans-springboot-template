@@ -9,14 +9,15 @@
     </parent>
     <artifactId>stan-springboot-template</artifactId>
     <modules>
+        <module>exception</module>
         <module>domain-web</module>
         <module>domain-command</module>
+        <module>domain-client</module>
         <module>repository</module>
         <module>redis</module>
         <module>client</module>
         <module>command</module>
         <module>web</module>
-        <module>domain-client</module>
     </modules>
     <groupId>stan.template</groupId>
     <name>Stan Spring Boot Data Template</name>
