@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import template.AbstractCommand;
 import template.testing.RedisObject;
-import template.testing.TestingEntity;
-import template.testing.TestingEntityRepository;
+import template.testing.primary.TestingPrimaryEntityRepository;
 import template.testing.TestingCommand;
+import template.testing.primary.TestingPrimaryEntity;
 
 @Service
 public class TestingCommandImpl extends AbstractCommand<JsonNode, String>
@@ -18,7 +18,7 @@ public class TestingCommandImpl extends AbstractCommand<JsonNode, String>
     private RedisObject redisObject;
 
     @Autowired
-    private TestingEntityRepository repository;
+    private TestingPrimaryEntityRepository repository;
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -28,7 +28,7 @@ public class TestingCommandImpl extends AbstractCommand<JsonNode, String>
             count = 1l;
         }
         redisObject.saveRequest(String.valueOf(count), jsonNode);
-        TestingEntity entity = objectMapper.convertValue(jsonNode, TestingEntity.class);
+        TestingPrimaryEntity entity = objectMapper.convertValue(jsonNode, TestingPrimaryEntity.class);
         repository.saveAndFlush(entity);
         return "Okay";
     }
