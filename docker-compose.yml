@@ -7,13 +7,10 @@ services:
       dockerfile: Dockerfile
     container_name: java-app
     ports:
-      - "8080:8080"
+      - "8800:8800"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/myappdb
-      SPRING_DATASOURCE_USERNAME: appuser
-      SPRING_DATASOURCE_PASSWORD: apppass
-      SPRING_REDIS_HOST: redis
-      SPRING_REDIS_PORT: 6379
+      DB_PRIMARY_URL: jdbc:mysql://host.docker.internal:3306/myappdb?useSSL=false&serverTimezone=Asia/Jakarta&allowPublicKeyRetrieval=true
+      DB_SECONDARY_URL: jdbc:postgresql://host.docker.internal:5432/mydatabase
     depends_on:
       - mysql
       - redis
