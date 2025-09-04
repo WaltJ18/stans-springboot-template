@@ -32,4 +32,4 @@ My Template with command pattern
 <br>
 
 <h3>Module Dependency</h3>
-![img.png](documentation/img.png)
+<img src="documentation/img.png"/>

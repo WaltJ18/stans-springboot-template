@@ -1,0 +1,59 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                              https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <profiles>
+        <profile>
+            <id>use-nexus</id>
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <url>http://host.docker.internal:8081/repository/maven-central/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>central</id>
+                    <url>http://host.docker.internal:8081/repository/maven-central/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+
+    <!-- Activate the profile -->
+    <activeProfiles>
+        <activeProfile>use-nexus</activeProfile>
+    </activeProfiles>
+
+    <!-- Mirror to redirect everything through Nexus -->
+    <mirrors>
+        <mirror>
+            <id>nexus</id>
+            <mirrorOf>*</mirrorOf>
+            <url>http://host.docker.internal:8081/repository/maven-central/</url>
+        </mirror>
+    </mirrors>
+
+    <!-- If Nexus requires login -->
+    <servers>
+        <server>
+            <id>nexus</id>
+            <username>admin</username>
+            <password>admin</password>
+        </server>
+    </servers>
+
+</settings>
